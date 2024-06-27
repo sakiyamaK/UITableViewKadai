@@ -17,11 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
 
-        let vc = Kadai2TableViewController()
+//        let vc = Kadai2TableViewController()
 //        let vc = Kadai3TableViewController()
 //        let vc = Kadai4TableViewController()
 //        let vc = Kadai5TableViewController()
-//        let vc = UINavigationController(rootViewController: Kadai6TableViewController())
+        let vc = UINavigationController(rootViewController: Kadai6TableViewController())
         
         window.rootViewController = vc
         

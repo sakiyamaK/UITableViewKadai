@@ -49,7 +49,6 @@ class Kadai5TableViewController: UIViewController {
         let tableView = UITableView(frame: CGRect.zero, style: UITableView.Style.plain)
         tableView.register(CenterNumberTableViewCell.self, forCellReuseIdentifier: cellReuseId)
         tableView.dataSource = self
-        tableView.rowHeight = UITableView.automaticDimension
         
         stackView.addArrangedSubview(tableView)
         

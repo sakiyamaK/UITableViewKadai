@@ -50,7 +50,6 @@ class Kadai6TableViewController: UIViewController {
         tableView.register(CenterNumberTableViewCell.self, forCellReuseIdentifier: cellReuseId)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 100
 
         stackView.addArrangedSubview(tableView)
         

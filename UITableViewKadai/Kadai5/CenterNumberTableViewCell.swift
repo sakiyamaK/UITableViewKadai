@@ -8,7 +8,7 @@
 import UIKit
 
 class CenterNumberTableViewCell: UITableViewCell {
-    
+        
     private weak var label: UILabel!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -34,10 +34,15 @@ class CenterNumberTableViewCell: UITableViewCell {
         
         self.label = label
     }
-        
+            
     // storyboardからは読めませんよという設定
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        label.text = nil
     }
     
     func configure(indexPath: IndexPath) {

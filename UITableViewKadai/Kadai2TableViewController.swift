@@ -17,11 +17,14 @@ class Kadai2TableViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         let tableView = UITableView(frame: CGRect.zero, style: UITableView.Style.plain)
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
+        
         tableView.dataSource = self
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tableView)
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
@@ -39,7 +42,7 @@ extension Kadai2TableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId)!        
         print(indexPath)
         return cell
     }

@@ -37,11 +37,12 @@ class Kadai4TableViewController: UIViewController {
         let button = UIButton()
         button.setTitle("セルよ！増えろ", for: UIControl.State.normal)
         button.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        button.addAction(UIAction.init(handler: { action in
+        let action = UIAction.init(handler: { action in
             // セルの数をひとつ増やしてtableviewを再読み込み
             self.cells.append(self.cells.count + 1)
             self.tableView.reloadData()
-        }), for: UIControl.Event.touchUpInside)
+        })
+        button.addAction(action, for: UIControl.Event.touchUpInside)
         
         stackView.addArrangedSubview(button)
             
@@ -65,6 +66,16 @@ extension Kadai4TableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId)!
+        
+        let item = cells[indexPath.row]
+        
+        var configuration = UIListContentConfiguration.cell()
+        configuration.text = "\(cells[indexPath.row])"
+
+        cell.contentConfiguration = configuration
+        
+//        cell.textLabel?.text = "\(item)"
+
         return cell
     }
 }
